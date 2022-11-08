@@ -11,6 +11,10 @@ const {
     tecladoEstrategia
 } = require("./data/teclados");
 const jogosAcao = require("./data/jogosAcao");
+const jogosAcaoAv = require("./data/jogosAcaoAv");
+const jogosRPG = require("./data/jogosRPG");
+const jogosSimulacao = require("./data/jogosSimulacao");
+const jogosEstrategia = require("./data/jogosEstrategia");
 const gerarListaJogos = require("./helpers/gerarListaJogos");
 
 // Criando o objeto "bot" e o instanciando como um novo objeto da classe Telegraf
@@ -44,12 +48,12 @@ bot.hears(["1", "2", "3", "4", "5"], ctx => {
             // exibindo subcategorias de ação, ouvindo resposta do usuário e enviando os jogos
             ctx.reply(mensagemTeclado, tecladoAcao);
             let recomendadosAcao = "";
-            bot.hears("Plataforma", ctx => {recomendadosAcao = gerarListaJogos(jogosAcao.plataforma); ctx.reply(recomendadosAcao);});
-            bot.hears("Tiro/FPS", ctx => {recomendadosAcao = gerarListaJogos(jogosAcao.tiro); ctx.reply(recomendadosAcao);});
-            bot.hears("Luta", ctx => {recomendadosAcao = gerarListaJogos(jogosAcao.luta); ctx.reply(recomendadosAcao);});
-            bot.hears("Beat-em up", ctx => {recomendadosAcao = gerarListaJogos(jogosAcao.beatemup); ctx.reply(recomendadosAcao);});
-            bot.hears("Furtivo", ctx => {recomendadosAcao = gerarListaJogos(jogosAcao.furtivo); ctx.reply(recomendadosAcao);});
-            bot.hears("Sobrevivência", ctx => {recomendadosAcao = gerarListaJogos(jogosAcao.sobrevivencia); ctx.reply(recomendadosAcao);});
+            bot.hears("Plataforma", ctx => {recomendadosAcao = gerarListaJogos(jogosAcao.plataforma, "Plataforma"); ctx.reply(recomendadosAcao);});
+            bot.hears("Tiro/FPS", ctx => {recomendadosAcao = gerarListaJogos(jogosAcao.tiro, "Tiro"); ctx.reply(recomendadosAcao);});
+            bot.hears("Luta", ctx => {recomendadosAcao = gerarListaJogos(jogosAcao.luta, "Luta"); ctx.reply(recomendadosAcao);});
+            bot.hears("Beat-em up", ctx => {recomendadosAcao = gerarListaJogos(jogosAcao.beatemup, "Beat-em"); ctx.reply(recomendadosAcao);});
+            bot.hears("Furtivo", ctx => {recomendadosAcao = gerarListaJogos(jogosAcao.furtivo, "Stealth"); ctx.reply(recomendadosAcao);});
+            bot.hears("Sobrevivência", ctx => {recomendadosAcao = gerarListaJogos(jogosAcao.sobrevivencia, "Sobrevivência"); ctx.reply(recomendadosAcao);});
             break;
         case "2":
             // exibindo subcategorias de ação/aventura, ouvindo resposta do usuário e enviando os jogos
