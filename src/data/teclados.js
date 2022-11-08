@@ -4,7 +4,7 @@ const { Markup } = require("telegraf");
 const tecladoAcao = Markup.keyboard([
     ["Plataforma", "Tiro/FPS", "Luta"],
     ["Beat-em up", "Furtivo"],
-    ["Sobrevivência", "Rítmico"]
+    ["Sobrevivência"]
 ])
 .resize();
 
