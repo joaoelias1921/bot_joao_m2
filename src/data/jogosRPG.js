@@ -15,7 +15,7 @@ const acao = [
 
 const mmorpg = [
     {
-        titulo: "world of warcraft",
+        titulo: "World of Warcraft",
         link: "https://worldofwarcraft.com/pt-br/start?utm_source=6372051&utm_medium=Paid&utm_content=336120358&utm_campaign=BLZ_27557830&dclid=&gclid=Cj0KCQiAmaibBhCAARIsAKUlaKQ0GDFNEA17qJadNPBAcIWVDsij1l0cZ_VilO7KrKzGKPDXPtkPURkaAixHEALw_wcB"
     },
     {

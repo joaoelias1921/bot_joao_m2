@@ -59,32 +59,32 @@ bot.hears(["1", "2", "3", "4", "5"], ctx => {
             // exibindo subcategorias de ação/aventura, ouvindo resposta do usuário e enviando os jogos
             ctx.reply(mensagemTeclado, tecladoAcaoAventura);
             let recomendadosAcaoAv = "";
-            bot.hears("Horror/Sobrevivência", ctx => {recomendadosAcaoAv = gerarListaJogos(jogosAcaoAv.horror); ctx.reply(recomendadosAcaoAv);});
-            bot.hears("Metroidvania", ctx => {recomendadosAcaoAv = gerarListaJogos(jogosAcaoAv.metroidvania); ctx.reply(recomendadosAcaoAv);});
+            bot.hears("Horror/Sobrevivência", ctx => {recomendadosAcaoAv = gerarListaJogos(jogosAcaoAv.horror, "Horror"); ctx.reply(recomendadosAcaoAv);});
+            bot.hears("Metroidvania", ctx => {recomendadosAcaoAv = gerarListaJogos(jogosAcaoAv.metroidvania, "Metroidvania"); ctx.reply(recomendadosAcaoAv);});
             break;
         case "3":
             // exibindo subcategorias de RPG, ouvindo resposta do usuário e enviando os jogos
             ctx.reply(mensagemTeclado, tecladoRPG);
             let recomendadosRPG = "";
-            bot.hears("RPG de Ação", ctx => {recomendadosRPG = gerarListaJogos(jogosRPG.acao); ctx.reply(recomendadosRPG);});
-            bot.hears("MMORPG", ctx => {recomendadosRPG = gerarListaJogos(jogosRPG.mmorpg); ctx.reply(recomendadosRPG);});
-            bot.hears("Roguelike", ctx => {recomendadosRPG = gerarListaJogos(jogosRPG.roguelike); ctx.reply(recomendadosRPG);});
-            bot.hears("Sandbox", ctx => {recomendadosRPG = gerarListaJogos(jogosRPG.sandbox); ctx.reply(recomendadosRPG);});
+            bot.hears("RPG de Ação", ctx => {recomendadosRPG = gerarListaJogos(jogosRPG.acao, "Ação+RPG"); ctx.reply(recomendadosRPG);});
+            bot.hears("MMORPG", ctx => {recomendadosRPG = gerarListaJogos(jogosRPG.mmorpg, "MMORPG"); ctx.reply(recomendadosRPG);});
+            bot.hears("Roguelike", ctx => {recomendadosRPG = gerarListaJogos(jogosRPG.roguelike, "Roguelike"); ctx.reply(recomendadosRPG);});
+            bot.hears("Sandbox", ctx => {recomendadosRPG = gerarListaJogos(jogosRPG.sandbox, "RPG+Sandbox"); ctx.reply(recomendadosRPG);});
             break;
         case "4":
             // exibindo subcategorias de simulaçõa, ouvindo resposta do usuário e enviando os jogos
             ctx.reply(mensagemTeclado, tecladoSimulacao);
             let recomendadosSimul = "";
-            bot.hears("Construção e Gestão", ctx => {recomendadosSimul = gerarListaJogos(jogosSimulacao.construcao); ctx.reply(recomendadosSimul);})
-            bot.hears("Vida", ctx => {recomendadosSimul = gerarListaJogos(jogosSimulacao.vida); ctx.reply(recomendadosSimul);})
-            bot.hears("Veículos", ctx => {recomendadosSimul = gerarListaJogos(jogosSimulacao.veiculos); ctx.reply(recomendadosSimul);})
+            bot.hears("Construção e Gestão", ctx => {recomendadosSimul = gerarListaJogos(jogosSimulacao.construcao, "Construção"); ctx.reply(recomendadosSimul);})
+            bot.hears("Vida", ctx => {recomendadosSimul = gerarListaJogos(jogosSimulacao.vida, "Vida"); ctx.reply(recomendadosSimul);})
+            bot.hears("Veículos", ctx => {recomendadosSimul = gerarListaJogos(jogosSimulacao.veiculos, "Veículos"); ctx.reply(recomendadosSimul);})
             break;
         case "5":
             // exibindo subcategorias de estratégia, ouvindo resposta do usuário e enviando os jogos
             ctx.reply(mensagemTeclado, tecladoEstrategia);
             let recomendadosEstrat = "";
-            bot.hears("RTS", ctx => {recomendadosEstrat = gerarListaJogos(jogosEstrategia.rts); ctx.reply(recomendadosEstrat);})
-            bot.hears("MOBA", ctx => {recomendadosEstrat = gerarListaJogos(jogosEstrategia.moba); ctx.reply(recomendadosEstrat);})
+            bot.hears("RTS", ctx => {recomendadosEstrat = gerarListaJogos(jogosEstrategia.rts, "RTS"); ctx.reply(recomendadosEstrat);})
+            bot.hears("MOBA", ctx => {recomendadosEstrat = gerarListaJogos(jogosEstrategia.moba, "MOBA"); ctx.reply(recomendadosEstrat);})
             break;
     } 
 });
