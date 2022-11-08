@@ -9,7 +9,7 @@ const rts = [
     },
     {
         titulo: "Age of Empires",
-        link: "https://store.steampowered.com/app/1017900/Age_of_Empires_Definitive_Edition/?l=portuguese"
+        link: "https://store.steampowered.com/app/1017900/Age_of_Empires_Definitive_Edition/"
     },
     {
         titulo: "Command & Conquer",
@@ -24,11 +24,11 @@ const moba = [
     },
     {
         titulo: "Dota 2",
-        link: "https://store.steampowered.com/app/570/Dota_2/?l=portuguese"
+        link: "https://store.steampowered.com/app/570/Dota_2/"
     },
     {
         titulo: "SMITE",
-        link: "https://store.steampowered.com/app/386360/SMITE/?l=portuguese"
+        link: "https://store.steampowered.com/app/386360/SMITE/"
     },
 ];
 

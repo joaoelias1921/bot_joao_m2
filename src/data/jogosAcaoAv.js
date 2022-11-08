@@ -5,18 +5,18 @@ const horror = [
     },
     {
         titulo: "Amnesia: The Dark Descent",
-        link: "https://store.steampowered.com/app/57300/Amnesia_The_Dark_Descent/?l=portuguese"
+        link: "https://store.steampowered.com/app/57300/Amnesia_The_Dark_Descent/"
     },
     {
         titulo: "Dead By Daylight",
-        link: "https://store.steampowered.com/app/381210/Dead_by_Daylight/?l=portuguese"
+        link: "https://store.steampowered.com/app/381210/Dead_by_Daylight/"
     }
 ];
 
 const metroidvania = [
     {
         titulo: "Ori and The Blind Forest",
-        link: "https://store.steampowered.com/app/261570/Ori_and_the_Blind_Forest/?l=portuguese"
+        link: "https://store.steampowered.com/app/261570/Ori_and_the_Blind_Forest/"
     },
     {
         titulo: "Hollow Knight",

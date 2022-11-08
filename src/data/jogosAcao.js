@@ -9,7 +9,7 @@ const plataforma = [
     },
     {
         titulo: "LIMBO",
-        link: "https://store.steampowered.com/app/48000/LIMBO/?l=portuguese"
+        link: "https://store.steampowered.com/app/48000/LIMBO/"
     }
 ];
 
@@ -24,7 +24,7 @@ const tiro = [
     },
     {
         titulo: "Gears 5",
-        link: "https://store.steampowered.com/app/1097840/Gears_5/?l=brazilian"
+        link: "https://store.steampowered.com/app/1097840/Gears_5/"
     },
     {
         titulo: "Paladins",
@@ -35,11 +35,11 @@ const tiro = [
 const luta = [
     {
         titulo: "Mortal Kombat 11",
-        link: "https://store.steampowered.com/app/976310/Mortal_Kombat11/?l=brazilian"
+        link: "https://store.steampowered.com/app/976310/Mortal_Kombat11/"
     },
     {
         titulo: "Street Fighter V",
-        link: "https://store.steampowered.com/app/310950/Street_Fighter_V/?l=portuguese"
+        link: "https://store.steampowered.com/app/310950/Street_Fighter_V/"
     },
     {
         titulo: "TEKKEN 7",
@@ -47,7 +47,7 @@ const luta = [
     },
     {
         titulo: "Sleeping Dogs",
-        link: "https://store.steampowered.com/app/202170/Sleeping_Dogs/?l=portuguese"
+        link: "https://store.steampowered.com/app/202170/Sleeping_Dogs/"
     }
 ];
 
@@ -69,7 +69,7 @@ const beatemup = [
 const furtivo = [
     {
         titulo: "Dishonored",
-        link: "https://store.steampowered.com/app/205100/Dishonored/?l=portuguese"
+        link: "https://store.steampowered.com/app/205100/Dishonored/"
     },
     {
         titulo: "Metal Gear Solid V: The Phantom Pain",
@@ -77,7 +77,7 @@ const furtivo = [
     },
     {
         titulo: "Tom Clancy's Splinter Cell",
-        link: "https://store.steampowered.com/app/13560/Tom_Clancys_Splinter_Cell/?l=portuguese"
+        link: "https://store.steampowered.com/app/13560/Tom_Clancys_Splinter_Cell/"
     }
 ];
 
@@ -92,7 +92,7 @@ const sobrevivencia = [
     },
     {
         titulo: "The Forest",
-        link: "https://store.steampowered.com/app/242760/The_Forest/?l=portuguese"
+        link: "https://store.steampowered.com/app/242760/The_Forest/"
     },
 ];
 

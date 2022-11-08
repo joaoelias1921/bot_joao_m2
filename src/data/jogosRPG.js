@@ -5,11 +5,11 @@ const acao = [
     },
     {
         titulo: "DARK SOULS: Prepare To Die Edition",
-        link: "https://store.steampowered.com/app/211420/DARK_SOULS_Prepare_To_Die_Edition/?l=portuguese"
+        link: "https://store.steampowered.com/app/211420/DARK_SOULS_Prepare_To_Die_Edition/"
     },
     {
         titulo: "Fallout 3",
-        link: "https://store.steampowered.com/app/22300/Fallout_3/?l=portuguese"
+        link: "https://store.steampowered.com/app/22300/Fallout_3/"
     }
 ];
 
@@ -46,7 +46,7 @@ const roguelike = [
 const sandbox = [
     {
         titulo: "The Elder Scrolls V: Skyrim",
-        link: "https://store.steampowered.com/app/489830/The_Elder_Scrolls_V_Skyrim_Special_Edition/?l=portuguese"
+        link: "https://store.steampowered.com/app/489830/The_Elder_Scrolls_V_Skyrim_Special_Edition/"
     },
     {
         titulo: "Just Cause 3",

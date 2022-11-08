@@ -1,7 +1,7 @@
 const construcao = [
     {
         titulo: "SimCity 4",
-        link: "https://store.steampowered.com/app/24780/SimCity_4_Deluxe_Edition/?l=portuguese"
+        link: "https://store.steampowered.com/app/24780/SimCity_4_Deluxe_Edition/"
     },
     {
         titulo: "Tropico 4",
@@ -9,7 +9,7 @@ const construcao = [
     },
     {
         titulo: "Cities Skylines",
-        link: "https://store.steampowered.com/app/255710/Cities_Skylines/?l=portuguese"
+        link: "https://store.steampowered.com/app/255710/Cities_Skylines/"
     }
 ];
 
@@ -35,7 +35,7 @@ const veiculos = [
     },
     {
         titulo: "Euro Truck Simulator 2",
-        link: "https://store.steampowered.com/app/227300/Euro_Truck_Simulator_2/?l=portuguese"
+        link: "https://store.steampowered.com/app/227300/Euro_Truck_Simulator_2/"
     },
     {
         titulo: "Car Mechanic Simulator 2018",
