@@ -16,7 +16,7 @@ const jogosRPG = require("./data/jogosRPG");
 const jogosSimulacao = require("./data/jogosSimulacao");
 const jogosEstrategia = require("./data/jogosEstrategia");
 const gerarVisualizacaoJogo = require("./helpers/gerarVisualizacaoJogo");
-const jogoAleatorio = require("./helpers/jogoAleatorio");
+const aleatorio = require("./helpers/aleatorio");
 const wallpapers = require("./data/wallpapers");
 const locations = require("./data/locations");
 
@@ -36,6 +36,8 @@ bot.start(async ctx => {
             \nSou capaz de <b>recomendar jogos</b> de diversas categorias para você se divertir, basta enviar a palavra "<b>Jogar</b>"!
             \nTambém posso te enviar alguns wallpapers incríveis de jogos reconhecidos, pra você não esquecê-los. Digite "<b>Wallpaper</b>" para ver um deles!
             \nQuer saber de alguns locais curiosos relacionados aos games? Envie "<b>Curiosidade</b>" para ver um deles!
+            \nMe envie um <i>emoji</i> que indique qual sua plataforma preferida (laptop, desktop, smartphone, console) para jogar nas horas vagas, sou curioso!
+            \nCaso deseje, também posso fazer pesquisas na Steam para você! Basta enviar a palavra "<b>Steam</b>" que te informo melhor!
             \nAlém de tudo isso, ainda faço as funções básicas de um chatbot. Basta enviar a palavra "<b>Outros</b>" para ver o que eu posso fazer!
             \nConfira a <a href="https://core.telegram.org/bots/api">documentação oficial</a> dos bots para Telegram para mais informações.
         `);
@@ -46,8 +48,8 @@ bot.start(async ctx => {
 });
 
 // tratando eventos de texto
-bot.on("text", (ctx, next) => {
-    ctx.reply(`O texto recebido foi: '${ctx.update.message.text}', mas, e ai, bora jogar?`);
+bot.on("text", async (ctx, next) => {
+    await ctx.reply(`A mensagem recebida foi: '${ctx.update.message.text}', mas, e ai, bora jogar?`);
     next();
 });
 
@@ -111,27 +113,27 @@ bot.hears(["Jogar", "jogar"], ctx => {
                 ctx.reply(mensagemTeclado, tecladoAcao);
                 let recomendadosAcao = "";
                 bot.hears("Plataforma", ctx => {
-                    recomendadosAcao = gerarVisualizacaoJogo(jogoAleatorio(jogosAcao.plataforma), "Plataforma"); 
+                    recomendadosAcao = gerarVisualizacaoJogo(aleatorio(jogosAcao.plataforma), "Plataforma"); 
                     ctx.reply(recomendadosAcao);
                 });
                 bot.hears("Tiro/FPS", ctx => {
-                    recomendadosAcao = gerarVisualizacaoJogo(jogoAleatorio(jogosAcao.tiro), "Tiro"); 
+                    recomendadosAcao = gerarVisualizacaoJogo(aleatorio(jogosAcao.tiro), "Tiro"); 
                     ctx.reply(recomendadosAcao);
                 });
                 bot.hears("Luta", ctx => {
-                    recomendadosAcao = gerarVisualizacaoJogo(jogoAleatorio(jogosAcao.luta), "Luta"); 
+                    recomendadosAcao = gerarVisualizacaoJogo(aleatorio(jogosAcao.luta), "Luta"); 
                     ctx.reply(recomendadosAcao);
                 });
                 bot.hears("Beat-em up", ctx => {
-                    recomendadosAcao = gerarVisualizacaoJogo(jogoAleatorio(jogosAcao.beatemup), "Beat-em"); 
+                    recomendadosAcao = gerarVisualizacaoJogo(aleatorio(jogosAcao.beatemup), "Beat-em"); 
                     ctx.reply(recomendadosAcao);
                 });
                 bot.hears("Furtivo", ctx => {
-                    recomendadosAcao = gerarVisualizacaoJogo(jogoAleatorio(jogosAcao.furtivo), "Stealth"); 
+                    recomendadosAcao = gerarVisualizacaoJogo(aleatorio(jogosAcao.furtivo), "Stealth"); 
                     ctx.reply(recomendadosAcao);
                 });
                 bot.hears("Sobrevivência", ctx => {
-                    recomendadosAcao = gerarVisualizacaoJogo(jogoAleatorio(jogosAcao.sobrevivencia), "Sobrevivência"); 
+                    recomendadosAcao = gerarVisualizacaoJogo(aleatorio(jogosAcao.sobrevivencia), "Sobrevivência"); 
                     ctx.reply(recomendadosAcao);
                 });
                 break;
@@ -140,11 +142,11 @@ bot.hears(["Jogar", "jogar"], ctx => {
                 ctx.reply(mensagemTeclado, tecladoAcaoAventura);
                 let recomendadosAcaoAv = "";
                 bot.hears("Horror/Sobrevivência", ctx => {
-                    recomendadosAcaoAv = gerarVisualizacaoJogo(jogoAleatorio(jogosAcaoAv.horror), "Horror"); 
+                    recomendadosAcaoAv = gerarVisualizacaoJogo(aleatorio(jogosAcaoAv.horror), "Horror"); 
                     ctx.reply(recomendadosAcaoAv);
                 });
                 bot.hears("Metroidvania", ctx => {
-                    recomendadosAcaoAv = gerarVisualizacaoJogo(jogoAleatorio(jogosAcaoAv.metroidvania), "Metroidvania"); 
+                    recomendadosAcaoAv = gerarVisualizacaoJogo(aleatorio(jogosAcaoAv.metroidvania), "Metroidvania"); 
                     ctx.reply(recomendadosAcaoAv);
                 });
                 break;
@@ -153,19 +155,19 @@ bot.hears(["Jogar", "jogar"], ctx => {
                 ctx.reply(mensagemTeclado, tecladoRPG);
                 let recomendadosRPG = "";
                 bot.hears("RPG de Ação", ctx => {
-                    recomendadosRPG = gerarVisualizacaoJogo(jogoAleatorio(jogosRPG.acao), "Ação+RPG"); 
+                    recomendadosRPG = gerarVisualizacaoJogo(aleatorio(jogosRPG.acao), "Ação+RPG"); 
                     ctx.reply(recomendadosRPG);
                 });
                 bot.hears("MMORPG", ctx => {
-                    recomendadosRPG = gerarVisualizacaoJogo(jogoAleatorio(jogosRPG.mmorpg), "MMORPG"); 
+                    recomendadosRPG = gerarVisualizacaoJogo(aleatorio(jogosRPG.mmorpg), "MMORPG"); 
                     ctx.reply(recomendadosRPG);
                 });
                 bot.hears("Roguelike", ctx => {
-                    recomendadosRPG = gerarVisualizacaoJogo(jogoAleatorio(jogosRPG.roguelike), "Roguelike"); 
+                    recomendadosRPG = gerarVisualizacaoJogo(aleatorio(jogosRPG.roguelike), "Roguelike"); 
                     ctx.reply(recomendadosRPG);
                 });
                 bot.hears("Sandbox", ctx => {
-                    recomendadosRPG = gerarVisualizacaoJogo(jogoAleatorio(jogosRPG.sandbox), "RPG+Sandbox"); 
+                    recomendadosRPG = gerarVisualizacaoJogo(aleatorio(jogosRPG.sandbox), "RPG+Sandbox"); 
                     ctx.reply(recomendadosRPG);
                 });
                 break;
@@ -174,15 +176,15 @@ bot.hears(["Jogar", "jogar"], ctx => {
                 ctx.reply(mensagemTeclado, tecladoSimulacao);
                 let recomendadosSimul = "";
                 bot.hears("Construção e Gestão", ctx => {
-                    recomendadosSimul = gerarVisualizacaoJogo(jogoAleatorio(jogosSimulacao.construcao), "Construção"); 
+                    recomendadosSimul = gerarVisualizacaoJogo(aleatorio(jogosSimulacao.construcao), "Construção"); 
                     ctx.reply(recomendadosSimul);
                 })
                 bot.hears("Vida", ctx => {
-                    recomendadosSimul = gerarVisualizacaoJogo(jogoAleatorio(jogosSimulacao.vida), "Vida"); 
+                    recomendadosSimul = gerarVisualizacaoJogo(aleatorio(jogosSimulacao.vida), "Vida"); 
                     ctx.reply(recomendadosSimul);
                 })
                 bot.hears("Veículos", ctx => {
-                    recomendadosSimul = gerarVisualizacaoJogo(jogoAleatorio(jogosSimulacao.veiculos), "Veículos"); 
+                    recomendadosSimul = gerarVisualizacaoJogo(aleatorio(jogosSimulacao.veiculos), "Veículos"); 
                     ctx.reply(recomendadosSimul);
                 })
                 break;
@@ -191,11 +193,11 @@ bot.hears(["Jogar", "jogar"], ctx => {
                 ctx.reply(mensagemTeclado, tecladoEstrategia);
                 let recomendadosEstrat = "";
                 bot.hears("RTS", ctx => {
-                    recomendadosEstrat = gerarVisualizacaoJogo(jogoAleatorio(jogosEstrategia.rts), "RTS"); 
+                    recomendadosEstrat = gerarVisualizacaoJogo(aleatorio(jogosEstrategia.rts), "RTS"); 
                     ctx.reply(recomendadosEstrat);
                 })
                 bot.hears("MOBA", ctx => {
-                    recomendadosEstrat = gerarVisualizacaoJogo(jogoAleatorio(jogosEstrategia.moba), "MOBA"); 
+                    recomendadosEstrat = gerarVisualizacaoJogo(aleatorio(jogosEstrategia.moba), "MOBA"); 
                     ctx.reply(recomendadosEstrat);
                 })
                 break;
@@ -205,19 +207,45 @@ bot.hears(["Jogar", "jogar"], ctx => {
     });
 });
 
+// aguardando evento específico para wallpaper, retornando um wallpaper aleatório da lista para o usuário
 bot.hears(["Wallpaper", "wallpaper"], ctx => {
     ctx.replyWithMarkdownV2("*Estou enviando um wallpaper incrível para você\\!*");
     ctx.replyWithPhoto({
-        url: `${jogoAleatorio(wallpapers).url}`
+        url: `${aleatorio(wallpapers).url}`
     });
 });
 
+// aguardando evento específico para curiosidade, retornando uma curiosidade aleatória da lista para o usuário,
+// com localização, imagem e descrição
 bot.hears(["Curiosidade", "curiosidade"], async ctx => {
-    const localSorteado = jogoAleatorio(locations);
+    const localSorteado = aleatorio(locations);
     await ctx.replyWithPhoto(localSorteado.img);
     await ctx.reply(localSorteado.descricao);
     await ctx.reply("Veja abaixo a localização real (aproximada) na qual o jogo foi baseado:");
     await ctx.replyWithLocation(localSorteado.latitude, localSorteado.longitude);
+});
+
+// utilizando o "hears" para emojis
+bot.hears(["💻", "🖥", "🕹", "📱"], ctx => {
+    const emoji = ctx.update.message.text;
+    ctx.reply(`Que show que você gosta de jogar no ${emoji}! Eu jogo em todos!`);
+});
+
+// utilizando o "hears" com expressões regulares
+bot.hears(/steam/i, ctx => {
+    ctx.replyWithHTML(`
+        Deseja pesquisar algo específico na biblioteca da Steam? 
+        \nMe diga o que é com o formato "<b>s-suapesquisa</b>", que pesquiso pra você!
+        \n<b>Dica: para buscas compostas, utilize "+" no lugar dos espaços!</b>
+        \nExemplo: s-ação+e+aventura
+    `);
+    bot.hears(/s-/i, ctx => {
+        const pesquisa = ctx.update.message.text.split("-")[1];
+        ctx.reply(`
+            https://store.steampowered.com/search/?term=${pesquisa}
+            \nDeu certo! Acesse o link acima para visualizar.
+        `);
+    });
 });
 
 bot.hears(["Outros", "outros"], ctx => {
