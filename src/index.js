@@ -17,20 +17,27 @@ const jogosSimulacao = require("./data/jogosSimulacao");
 const jogosEstrategia = require("./data/jogosEstrategia");
 const gerarVisualizacaoJogo = require("./helpers/gerarVisualizacaoJogo");
 const jogoAleatorio = require("./helpers/jogoAleatorio");
+const wallpapers = require("./data/wallpapers");
+const locations = require("./data/locations");
 
 // Criando o objeto "bot" e o instanciando como um novo objeto da classe Telegraf
 const bot = new Telegraf(env.token);
 const mensagemTeclado = "Ótimo! Agora, escolha uma das sub-categorias:";
 
 // Iniciando o bot
-bot.start(ctx => {
+bot.start(async ctx => {
     const from = ctx.update.message.from;
+    // verificando se o usuário é do João ou do prof. Emerson
     if(from.id === 1351450134 || from.id === 5792995783){
-        ctx.reply(`
-            Fala ${from.first_name.split(" ")[0]}, tranquilo?
+        // respondendo com código HTML
+        await ctx.replyWithHTML(`
+            <b>Fala ${from.first_name.split(" ")[0]}, tranquilo?</b>
             \nSou um bot desenvolvido para o trabalho de M2 da disciplina de Sistemas de Apoio à Decisão!
-            \nSou capaz de recomendar jogos de diversas categorias para você se divertir, basta enviar a palavra "Jogar"!
-            \nAlém de tudo isso, ainda faço as funções básicas de um chatbot. Basta enviar a palavra "Outros" para ver o que eu posso fazer!
+            \nSou capaz de <b>recomendar jogos</b> de diversas categorias para você se divertir, basta enviar a palavra "<b>Jogar</b>"!
+            \nTambém posso te enviar alguns wallpapers incríveis de jogos reconhecidos, pra você não esquecê-los. Digite "<b>Wallpaper</b>" para ver um deles!
+            \nQuer saber de alguns locais curiosos relacionados aos games? Envie "<b>Curiosidade</b>" para ver um deles!
+            \nAlém de tudo isso, ainda faço as funções básicas de um chatbot. Basta enviar a palavra "<b>Outros</b>" para ver o que eu posso fazer!
+            \nConfira a <a href="https://core.telegram.org/bots/api">documentação oficial</a> dos bots para Telegram para mais informações.
         `);
     }else {
         ctx.reply("Você não tem permissão para falar comigo!");
@@ -87,13 +94,14 @@ bot.on("sticker", ctx =>{
 
 // utilizando o "hears" com array de expressões
 bot.hears(["Jogar", "jogar"], ctx => {
-    ctx.reply(`
-        \nPara você, eu tenho uma ótima seleção de games da atualidade, para PCs fracos, medianos e atuais! Basta dizer qual das categorias abaixo você deseja visualizar:
-        \n1 - Ação
-        \n2 - Ação/Aventura
-        \n3 - RPG
-        \n4 - Simulação
-        \n5 - Estratégia (RTS/MOBA)
+    // respondendo com Markdown
+    ctx.replyWithMarkdownV2(`
+        Para você, eu tenho uma ótima seleção de games da atualidade, para PCs fracos, medianos e atuais\\! Basta dizer qual das categorias abaixo você deseja visualizar:
+        *1 \\-* Ação
+        *2 \\-* Ação/Aventura
+        *3 \\-* RPG
+        *4 \\-* Simulação
+        *5 \\-* Estratégia \\(RTS/MOBA\\)
     `);
     bot.hears(["1", "2", "3", "4", "5"], ctx => {
         // descobrindo qual numero foi digitado e exibindo o teclado correspondente
@@ -197,15 +205,30 @@ bot.hears(["Jogar", "jogar"], ctx => {
     });
 });
 
+bot.hears(["Wallpaper", "wallpaper"], ctx => {
+    ctx.replyWithMarkdownV2("*Estou enviando um wallpaper incrível para você\\!*");
+    ctx.replyWithPhoto({
+        url: `${jogoAleatorio(wallpapers).url}`
+    });
+});
+
+bot.hears(["Curiosidade", "curiosidade"], async ctx => {
+    const localSorteado = jogoAleatorio(locations);
+    await ctx.replyWithPhoto(localSorteado.img);
+    await ctx.reply(localSorteado.descricao);
+    await ctx.reply("Veja abaixo a localização real (aproximada) na qual o jogo foi baseado:");
+    await ctx.replyWithLocation(localSorteado.latitude, localSorteado.longitude);
+});
+
 bot.hears(["Outros", "outros"], ctx => {
-    ctx.reply(`
-        Dê uma olhada no que posso fazer:
-        \n- Repetir o que você digita
+    ctx.replyWithHTML(`
+        <b>Dê uma olhada no que posso fazer:</b>
+        \n\n- Repetir o que você digita
         \n- Informar as coordenadas de uma localização que você me fornecer
         \n- Dizer o nome e o número de um contato que você passar
         \n- Reproduzo suas mensagens de áudio e retorno a sua duração
         \n- Com minha trena, tiro e te informo as medidas de quaisquer fotos que você me enviar
-        \n- Se você me mandar uma figurinha, te retorno qual foi e qual seu emoji o seu conjunto
+        \n- Se você me mandar uma figurinha, te retorno qual seu <i>emoji</i> e o seu conjunto
     `);
 });
 

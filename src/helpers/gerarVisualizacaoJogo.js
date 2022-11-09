@@ -3,7 +3,7 @@ function gerarVisualizacaoJogo(jogo, genero) {
         Aproveite!
         \nJogo: ${jogo.titulo}
         \nOnde adquirir: ${jogo.link}
-        \n\nNão encontrou o que desejava? Veja a biblioteca da Steam para este gênero:
+        \n\nNão encontrou o que desejava? Utilize o bot novamente ou veja a biblioteca da Steam para este gênero:
         \nhttps://store.steampowered.com/search/?term=${genero}
     `;
     return stringJogos;
