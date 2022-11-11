@@ -1,3 +1,4 @@
+// cadastrando dados (mock) para jogos desta categoria
 const plataforma = [
     {
         titulo: "Celeste",
@@ -13,6 +14,7 @@ const plataforma = [
     }
 ];
 
+// cadastrando dados (mock) para jogos desta categoria
 const tiro = [
     {
         titulo: "Call of Duty: Modern Warfare II (2022)",
@@ -32,6 +34,7 @@ const tiro = [
     }
 ];
 
+// cadastrando dados (mock) para jogos desta categoria
 const luta = [
     {
         titulo: "Mortal Kombat 11",
@@ -51,6 +54,7 @@ const luta = [
     }
 ];
 
+// cadastrando dados (mock) para jogos desta categoria
 const beatemup = [
     {
         titulo: "Scott Pilgrim vs. The World",
@@ -66,6 +70,7 @@ const beatemup = [
     },
 ];
 
+// cadastrando dados (mock) para jogos desta categoria
 const furtivo = [
     {
         titulo: "Dishonored",
@@ -81,6 +86,7 @@ const furtivo = [
     }
 ];
 
+// cadastrando dados (mock) para jogos desta categoria
 const sobrevivencia = [
     {
         titulo: "Ark: Survival Evolved",
@@ -96,6 +102,7 @@ const sobrevivencia = [
     },
 ];
 
+// exportando os dados cadastrados
 module.exports = {
     plataforma,
     tiro,

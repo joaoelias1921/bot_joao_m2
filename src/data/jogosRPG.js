@@ -1,3 +1,4 @@
+// cadastrando dados (mock) para jogos desta categoria
 const acao = [
     {
         titulo: "The Witcher 3: Wild Hunt",
@@ -13,6 +14,7 @@ const acao = [
     }
 ];
 
+// cadastrando dados (mock) para jogos desta categoria
 const mmorpg = [
     {
         titulo: "World of Warcraft",
@@ -28,6 +30,7 @@ const mmorpg = [
     }
 ];
 
+// cadastrando dados (mock) para jogos desta categoria
 const roguelike = [
     {
         titulo: "Hades",
@@ -43,6 +46,7 @@ const roguelike = [
     }
 ];
 
+// cadastrando dados (mock) para jogos desta categoria
 const sandbox = [
     {
         titulo: "The Elder Scrolls V: Skyrim",
@@ -58,6 +62,7 @@ const sandbox = [
     }
 ];
 
+// exportando os dados cadastrados
 module.exports = {
     acao,
     mmorpg,

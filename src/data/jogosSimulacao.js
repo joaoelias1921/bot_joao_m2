@@ -1,3 +1,4 @@
+// cadastrando dados (mock) para jogos desta categoria
 const construcao = [
     {
         titulo: "SimCity 4",
@@ -13,6 +14,7 @@ const construcao = [
     }
 ];
 
+// cadastrando dados (mock) para jogos desta categoria
 const vida = [
     {
         titulo: "The Sims 4",
@@ -28,6 +30,7 @@ const vida = [
     }
 ];
 
+// cadastrando dados (mock) para jogos desta categoria
 const veiculos = [
     {
         titulo: "Microsoft Flight Simulator",
@@ -43,6 +46,7 @@ const veiculos = [
     }
 ];
 
+// exportando os dados cadastrados
 module.exports = {
     construcao,
     vida,

@@ -1,3 +1,4 @@
+// cadastrando dados (mock) para as curiosidades que serão exibidas aleatóriamente
 const location = [
     {
         descricao: "InFamous 2\n\nEste jogo se passa na cidade de New Marais, uma versão destruída e problemática, mas totalmente baseada na cidade de New Orleans, que fica no estado da Louisiana, nos EUA.",
@@ -31,4 +32,5 @@ const location = [
     }
 ];
 
+// exportando os dados cadastrados
 module.exports = location;

@@ -1,3 +1,4 @@
+// importando o Markup para os teclados
 const { Markup } = require("telegraf");
 
 // criando o teclado de jogos de ação

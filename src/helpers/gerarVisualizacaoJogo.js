@@ -1,3 +1,4 @@
+// função responsável por gerar o texto exibido para os jogos recomendados
 function gerarVisualizacaoJogo(jogo, genero) {
     const stringJogos = `
         Aproveite!

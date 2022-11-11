@@ -1,3 +1,4 @@
+// cadastrando dados (mock) para jogos desta categoria
 const rts = [
     {
         titulo: "Sid Meier's Civilization VI",
@@ -17,6 +18,7 @@ const rts = [
     }
 ];
 
+// cadastrando dados (mock) para jogos desta categoria
 const moba = [
     {
         titulo: "League of Legends",
@@ -32,4 +34,5 @@ const moba = [
     },
 ];
 
+// exportando os dados cadastrados
 module.exports = {rts, moba}

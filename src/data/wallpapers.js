@@ -1,3 +1,4 @@
+// cadastrando as URLs de wallpapers que serão enviados aleatóriamente para o usuário
 const wallpaper = [
     {
         url: "https://i.pinimg.com/originals/bc/9d/b7/bc9db7c166056be1afe0279b4f490467.jpg"
@@ -19,4 +20,5 @@ const wallpaper = [
     }
 ];
 
+// exportando os dados cadastrados
 module.exports = wallpaper;

@@ -1,3 +1,4 @@
+// cadastrando dados (mock) para jogos desta categoria
 const horror = [
     {
         titulo: "Resident Evil 7",
@@ -13,6 +14,7 @@ const horror = [
     }
 ];
 
+// cadastrando dados (mock) para jogos desta categoria
 const metroidvania = [
     {
         titulo: "Ori and The Blind Forest",
@@ -28,6 +30,7 @@ const metroidvania = [
     }
 ];
 
+// exportando os dados cadastrados
 module.exports = {
     horror,
     metroidvania

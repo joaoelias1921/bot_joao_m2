@@ -42,6 +42,7 @@ bot.start(async ctx => {
             \nConfira a <a href="https://core.telegram.org/bots/api">documentação oficial</a> dos bots para Telegram para mais informações.
         `);
     }else {
+        // respondendo que o usuário não tem permissão e interrompendo seu funcionamento
         ctx.reply("Você não tem permissão para falar comigo!");
         bot.stop("Usuário não autorizado.");
     }
@@ -248,6 +249,7 @@ bot.hears(/steam/i, ctx => {
     });
 });
 
+// aguardando evento específico para outros, retornando ao usuário uma lista com as funcionalidades do bot
 bot.hears(["Outros", "outros"], ctx => {
     ctx.replyWithHTML(`
         <b>Dê uma olhada no que posso fazer:</b>
